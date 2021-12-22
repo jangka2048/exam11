@@ -34,7 +34,7 @@
             {% endfor %}
         </ul>
 
-        <form method="POST" action="{% url 'qna:create_question' 'product' product.id %}">
+        <form method="POST" action="{% url 'products:question_create' product.id %}">
             {% csrf_token %}
 
             <div>

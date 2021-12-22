@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.contenttypes.models import ContentType
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
@@ -33,6 +34,10 @@ def question_create(request: HttpRequest, id):
         body = request.POST.get("body")
         question = Question(user_id=1, content_type=product_content_type, object_id=product.id, body=body)
         question.save()
+
+        messages.success(request, "질문이 등록되었습니다.")
+        print("HI")
+
         return redirect("products:detail", id=product.id)
 
     product_reals = product.product_reals.order_by('option_1_display_name', 'option_2_display_name')
