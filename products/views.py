@@ -66,10 +66,13 @@ def question_modify(request: HttpRequest, product_id, question_id):
     product = get_object_or_404(Product, id=product_id)
     question = get_object_or_404(Question, id=question_id)
 
-    print(question.body)
-
     if request.method == "POST":
         form = QuestionForm(request.POST, instance=question)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, "질문이 수정되었습니다.")
+            return redirect("products:detail", product_id=product_id)
     else:
         form = QuestionForm(None, instance=question)
 
