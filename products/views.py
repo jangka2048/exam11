@@ -33,10 +33,12 @@ def _product_detail(request: HttpRequest, id):
         form = QuestionForm()
 
     product_reals = product.product_reals.order_by('option_1_display_name', 'option_2_display_name')
+    questions = product.questions.order_by('-id')
 
     return render(request, "products/product_detail.html", {
         "product": product,
         "product_reals": product_reals,
+        "questions": questions,
         "question_form": form
     })
 
