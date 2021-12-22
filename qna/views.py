@@ -2,6 +2,8 @@ from django.contrib.contenttypes.models import ContentType
 from django.http import HttpRequest, HttpResponse
 
 # Create your views here.
+from django.shortcuts import redirect
+
 from products.models import Product
 from qna.models import Question
 
@@ -14,4 +16,5 @@ def create_question(request: HttpRequest, content_type, object_id):
         body = request.POST.get("body")
         question = Question(user_id=1, content_type=product_content_type, object_id=product_id, body=body)
         question.save()
+        return redirect("products:detail", id=product_id)
     return HttpResponse("성공")
