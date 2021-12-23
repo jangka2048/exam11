@@ -6,12 +6,36 @@
   margin-top: 0.75rem;
 }
 
+.t-mt-\[56px\] {
+  margin-top: 56px;
+}
+
+.t-flex {
+  display: flex;
+}
+
 .t-h-\[100px\] {
   height: 100px;
 }
 
+.t-min-h-screen {
+  min-height: 100vh;
+}
+
 .t-w-\[100px\] {
   width: 100px;
+}
+
+.t-flex-1 {
+  flex: 1 1 0%;
+}
+
+.t-flex-col {
+  flex-direction: column;
+}
+
+.t-whitespace-nowrap {
+  white-space: nowrap;
 }
 
 .t-bg-blue-500 {
@@ -27,6 +51,10 @@
 .t-bg-\[\#afafaf\] {
   --tw-bg-opacity: 1;
   background-color: rgb(175 175 175 / var(--tw-bg-opacity));
+}
+
+.t-text-center {
+  text-align: center;
 }
 
 @font-face {
