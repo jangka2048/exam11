@@ -15,16 +15,33 @@
   position: relative;
 }
 
+.t-my-\[0px\] {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 .t-mt-\[56px\] {
   margin-top: 56px;
+}
+
+.t-mt-2 {
+  margin-top: 0.5rem;
+}
+
+.t-mt-5 {
+  margin-top: 1.25rem;
 }
 
 .t-mt-3 {
   margin-top: 0.75rem;
 }
 
-.t-mt-2 {
-  margin-top: 0.5rem;
+.t-mt-\[30px\] {
+  margin-top: 30px;
+}
+
+.t-mt-\[15px\] {
+  margin-top: 15px;
 }
 
 .t-block {
@@ -47,12 +64,16 @@
   width: 100%;
 }
 
-.t-flex-1 {
-  flex: 1 1 0%;
+.t-max-w-\[500px\] {
+  max-width: 500px;
 }
 
-.t-grid-cols-5 {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+.t-max-w-\[300px\] {
+  max-width: 300px;
+}
+
+.t-flex-1 {
+  flex: 1 1 0%;
 }
 
 .t-grid-cols-1 {
@@ -71,37 +92,21 @@
   white-space: nowrap;
 }
 
-.t-border {
-  border-width: 1px;
+.t-py-\[20px\] {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.t-border-2 {
-  border-width: 2px;
+.t-pb-\[20px\] {
+  padding-bottom: 20px;
 }
 
-.t-border-solid {
-  border-style: solid;
-}
-
-.t-border-black {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+.t-pt-\[56px\] {
+  padding-top: 56px;
 }
 
 .t-text-center {
   text-align: center;
-}
-
-.t-text-\[40px\] {
-  font-size: 40px;
-}
-
-.t-text-\[1rem\] {
-  font-size: 1rem;
-}
-
-.t-text-\[2rem\] {
-  font-size: 2rem;
 }
 
 .t-text-\[1\.5rem\] {
@@ -120,6 +125,13 @@
   font-weight: normal;
 
   font-style: normal;
+}
+
+html > body ul,
+html > body li {
+  margin:0;
+  padding:0;
+  list-style:none;
 }
 
 html > body {
@@ -151,43 +163,11 @@ html > body :is(h1, h2, h3, h4, h5, h6) {
   background-color: #00000000;
 }
 
-.before\:t-text-white::before {
-  content: var(--tw-content);
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.before\:t-no-underline::before {
-  content: var(--tw-content);
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
-}
-
 .before\:t-transition-all::before {
   content: var(--tw-content);
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-}
-
-.before\:t-content-\[\'hello\'\]::before {
-  --tw-content: 'hello';
-  content: var(--tw-content);
-}
-
-.before\:t-content-\[\'ddd\'\]::before {
-  --tw-content: 'ddd';
-  content: var(--tw-content);
-}
-
-.before\:t-content-\[\'VIEWMORE\'\]::before {
-  --tw-content: 'VIEWMORE';
-  content: var(--tw-content);
-}
-
-.before\:t-content-\[\'VIEW_MORE\'\]::before {
-  --tw-content: 'VIEW MORE';
-  content: var(--tw-content);
 }
 
 .before\:t-content-\[\'\'\]::before {
@@ -198,14 +178,6 @@ html > body :is(h1, h2, h3, h4, h5, h6) {
 .after\:t-absolute::after {
   content: var(--tw-content);
   position: absolute;
-}
-
-.after\:t-inset-0::after {
-  content: var(--tw-content);
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
 }
 
 .after\:t-top-\[50\%\]::after {
@@ -250,64 +222,15 @@ html > body :is(h1, h2, h3, h4, h5, h6) {
   border-width: 2px;
 }
 
-.after\:t-border::after {
-  content: var(--tw-content);
-  border-width: 1px;
-}
-
-.after\:t-border-\[10px\]::after {
-  content: var(--tw-content);
-  border-width: 10px;
-}
-
 .after\:t-border-solid::after {
   content: var(--tw-content);
   border-style: solid;
-}
-
-.after\:t-border-black::after {
-  content: var(--tw-content);
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .after\:t-border-white::after {
   content: var(--tw-content);
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.after\:t-bg-red-500::after {
-  content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
-
-.after\:t-bg-\[\#afafaf\]::after {
-  content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(175 175 175 / var(--tw-bg-opacity));
-}
-
-.after\:t-bg-\[\#000000\]::after {
-  content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
-.after\:t-bg-\[\#00000055\]::after {
-  content: var(--tw-content);
-  background-color: #00000055;
-}
-
-.after\:t-bg-\[\#00000000\]::after {
-  content: var(--tw-content);
-  background-color: #00000000;
-}
-
-.after\:t-p-3::after {
-  content: var(--tw-content);
-  padding: 0.75rem;
 }
 
 .after\:t-p-2::after {
@@ -334,31 +257,6 @@ html > body :is(h1, h2, h3, h4, h5, h6) {
   transition-duration: 150ms;
 }
 
-.after\:t-content-\[\'hello\'\]::after {
-  --tw-content: 'hello';
-  content: var(--tw-content);
-}
-
-.after\:t-content-\[\'\'\]::after {
-  --tw-content: '';
-  content: var(--tw-content);
-}
-
-.after\:t-content-\[\'VIEW_MORE\'\]::after {
-  --tw-content: 'VIEW MORE';
-  content: var(--tw-content);
-}
-
-.after\:t-content-\[\(data-before\)\]::after {
-  --tw-content: (data-before);
-  content: var(--tw-content);
-}
-
-.after\:t-content-\[aatr\(data-before\)\]::after {
-  --tw-content: aatr(data-before);
-  content: var(--tw-content);
-}
-
 .after\:t-content-\[attr\(data-before\)\]::after {
   --tw-content: attr(data-before);
   content: var(--tw-content);
@@ -372,21 +270,6 @@ html > body :is(h1, h2, h3, h4, h5, h6) {
 .hover\:after\:t-block:hover::after {
   content: var(--tw-content);
   display: block;
-}
-
-.hover\:after\:t-bg-\[\#00000055\]:hover::after {
-  content: var(--tw-content);
-  background-color: #00000055;
-}
-
-.hover\:after\:t-bg-\[\#000000ff\]:hover::after {
-  content: var(--tw-content);
-  background-color: #000000ff;
-}
-
-.t-group:hover .group-hover\:after\:t-bg-\[\#000000ff\]::after {
-  content: var(--tw-content);
-  background-color: #000000ff;
 }
 
 @media (min-width: 640px) {
