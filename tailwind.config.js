@@ -1,6 +1,7 @@
 module.exports = {
+  mode: "jit",
   prefix: 't-',
-  content: ["./**/*.{html,js}"],
+  content: ["./**/templates/**/*.{html,js}"],
   theme: {
     extend: {},
   },

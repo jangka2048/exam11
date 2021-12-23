@@ -24,6 +24,6 @@ html > body {
 }
 ```
 
-- npx tailwindcss -i ./base/static/common.base.css -o ./base/static/common.css --watch
+- npm run css
 - 앞으로 개발할 때 마다 켜주세요.
 - .gitignore 파일에 node_modules/ 추가

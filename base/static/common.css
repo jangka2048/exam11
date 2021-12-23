@@ -1,26 +1,32 @@
-.t-fixed {
-  position: fixed;
-}
-
 .t-mt-\[100px\] {
   margin-top: 100px;
 }
 
-.t-resize {
-  resize: both;
+.t-mt-3 {
+  margin-top: 0.75rem;
 }
 
-.t-underline {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+.t-h-\[100px\] {
+  height: 100px;
 }
 
-.\[content\:\'hello\'\] {
-  content: 'hello';
+.t-w-\[100px\] {
+  width: 100px;
 }
 
-.\[content\:\"hello\"\] {
-  content: "hello";
+.t-bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.t-bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
+.t-bg-\[\#afafaf\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(175 175 175 / var(--tw-bg-opacity));
 }
 
 @font-face {
@@ -36,12 +42,4 @@
 html > body {
   font-family: "GmarketSansMedium";
   text-underline-position: under;
-}
-
-@media (prefers-color-scheme: dark) {
-  @media (min-width: 1024px) {
-    .dark\:lg\:hover\:\[paint-order\:markers\]:hover {
-      paint-order: markers;
-    }
-  }
 }
