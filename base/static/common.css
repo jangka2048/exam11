@@ -163,6 +163,13 @@ html > body :is(h1, h2, h3, h4, h5, h6) {
           text-decoration-line: none;
 }
 
+.before\:t-transition-all::before {
+  content: var(--tw-content);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .before\:t-content-\[\'hello\'\]::before {
   --tw-content: 'hello';
   content: var(--tw-content);
@@ -320,6 +327,13 @@ html > body :is(h1, h2, h3, h4, h5, h6) {
           text-decoration-line: none;
 }
 
+.after\:t-transition-all::after {
+  content: var(--tw-content);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .after\:t-content-\[\'hello\'\]::after {
   --tw-content: 'hello';
   content: var(--tw-content);
@@ -332,6 +346,21 @@ html > body :is(h1, h2, h3, h4, h5, h6) {
 
 .after\:t-content-\[\'VIEW_MORE\'\]::after {
   --tw-content: 'VIEW MORE';
+  content: var(--tw-content);
+}
+
+.after\:t-content-\[\(data-before\)\]::after {
+  --tw-content: (data-before);
+  content: var(--tw-content);
+}
+
+.after\:t-content-\[aatr\(data-before\)\]::after {
+  --tw-content: aatr(data-before);
+  content: var(--tw-content);
+}
+
+.after\:t-content-\[attr\(data-before\)\]::after {
+  --tw-content: attr(data-before);
   content: var(--tw-content);
 }
 
