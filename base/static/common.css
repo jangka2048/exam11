@@ -32,6 +32,10 @@
   margin-top: 0.5rem;
 }
 
+.t-mt-5 {
+  margin-top: 1.25rem;
+}
+
 .t-block {
   display: block;
 }
