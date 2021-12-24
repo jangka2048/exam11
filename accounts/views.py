@@ -7,9 +7,13 @@ from django.http import HttpRequest
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from .decorators import logout_required
 from .forms import SignupForm
 
-signin = LoginView.as_view(template_name="accounts/signin.html")
+
+@logout_required
+def signin(request: HttpRequest):
+    return LoginView.as_view(template_name="accounts/signin.html")(request)
 
 
 def signout(request: HttpRequest):
@@ -17,6 +21,7 @@ def signout(request: HttpRequest):
     return logout_then_login(request)
 
 
+@logout_required
 def signup(request: HttpRequest):
     if request.method == 'POST':
         form = SignupForm(request.POST)
