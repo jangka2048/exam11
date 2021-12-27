@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.contenttypes.models import ContentType
 from django.core import exceptions
+from django.core.paginator import Paginator
 from django.http import HttpRequest
 from django.shortcuts import render, get_object_or_404, redirect
 
@@ -12,11 +13,15 @@ from qna.models import Question
 
 def product_list(request: HttpRequest):
     search_keyword = request.GET.get('search_keyword', '')
+    page = request.GET.get('page', '1')
 
     if not search_keyword:
         products = Product.objects.order_by('-id')
     else:
         products = Product.objects.filter(display_name__icontains=search_keyword).order_by('-id')
+
+    paginator = Paginator(products, 4)  # 페이지당 10개씩 보여주기
+    products = paginator.get_page(page)
 
     return render(request, "products/product_list.html", {
         "products": products
