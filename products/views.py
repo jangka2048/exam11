@@ -6,6 +6,7 @@ from django.core.paginator import Paginator
 from django.http import HttpRequest
 from django.shortcuts import render, get_object_or_404, redirect
 
+from cart.forms import CartAddForm
 from products.models import Product
 from qna.forms import QuestionForm
 from qna.models import Question
@@ -29,6 +30,8 @@ def product_list(request: HttpRequest):
 
 
 def _product_detail(request: HttpRequest, product_id):
+    cart_add_form = CartAddForm(product_id=product_id)
+
     product = get_object_or_404(Product, id=product_id)
 
     if request.method == "POST" and request.user.is_authenticated:
@@ -54,7 +57,8 @@ def _product_detail(request: HttpRequest, product_id):
         "product": product,
         "product_reals": product_reals,
         "questions": questions,
-        "question_form": form
+        "question_form": form,
+        "cart_add_form": cart_add_form,
     })
 
 
