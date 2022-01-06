@@ -48,6 +48,21 @@ def list(request: HttpRequest):
 
 
 @login_required
+@require_POST
+def delete_items(request: HttpRequest):
+    ids = map(int, request.POST.get('ids').split(','))
+    cart_items = CartItem.objects.filter(id__in=ids)
+
+    for cart_item in cart_items:
+        if cart_item.user != request.user:
+            raise PermissionError()
+        cart_item.delete()
+
+    messages.success(request, "해당 장바구니 품목들이 삭제되었습니다.")
+
+    return redirect('cart:list')
+
+@login_required
 @require_GET
 def delete(request: HttpRequest, cart_item_id):
     cart_item = get_object_or_404(CartItem, id=cart_item_id)
