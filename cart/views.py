@@ -53,10 +53,26 @@ def delete(request: HttpRequest, cart_item_id):
     cart_item = get_object_or_404(CartItem, id=cart_item_id)
 
     if cart_item.user != request.user:
-        raise PermissionError
+        raise PermissionError()
 
     cart_item.delete()
 
     messages.success(request, "해당 장바구니 품목이 삭제되었습니다.")
+
+    return redirect('cart:list')
+
+
+@login_required
+@require_POST
+def modify(request: HttpRequest, cart_item_id):
+    cart_item = get_object_or_404(CartItem, id=cart_item_id)
+
+    if cart_item.user != request.user:
+        raise PermissionError()
+
+    cart_item.quantity = int(request.POST.get('quantity'))
+    cart_item.save()
+
+    messages.success(request, "해당 장바구니 품목의 개수가 수정되었습니다.")
 
     return redirect('cart:list')
